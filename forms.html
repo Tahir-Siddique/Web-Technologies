@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Forms</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 600px;
+            margin: 0 auto;
+            text-align: center;
+            background-color: grey;
+            color: orange;
+        }
+
+
+        .container-row {
+            background-color: orange;
+            border: 3px solid white;
+            color: whitesmoke;
+            padding: 20px;
+            margin: 10px auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .container h1 {
+            padding: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            margin: 10px;
+            align-content: center;
+            width: 300px;
+        }
+
+        input[type="radio"] {
+            margin: 10px;
+        }
+
+        button {
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>My First Forms</h1>
+        <form action="forms.html" method="post">
+
+
+            <div class="container-row" style="width: 300px;">
+                <input type="text" name="name" id="name" placeholder="Enter Name">
+                <input type="password" name="password" id="passoword" placeholder="Type your passsword">
+            </div>
+
+            <div class="container-row" style="width: 400px;">
+                <p>Favourite color?</p>
+                <div>
+                    <input type="radio" name="choice" id="red" value="red">Red
+                    <input type="radio" name="choice" id="green" value="green">Green
+                    <input type="radio" name="choice" id="blue" value="blue">Blue
+                    <input type="radio" name="choice" id="other" value="other">Other
+                </div>
+            </div>
+
+            <div class="container-row" style="width: 270px;">
+                <input type="text" name="province" id="province" placeholder="Select Province" list="provinces">
+                <datalist name="provinces" id="provinces">
+                    <option value="punjab">Punjab</option>
+                    <option value="sindh">Sindh</option>
+                    <option value="blochistan">Blochistan</option>
+                </datalist>
+            </div>
+
+            <div>
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+
+</html>
