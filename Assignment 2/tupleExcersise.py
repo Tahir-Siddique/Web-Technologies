@@ -1,0 +1,10 @@
+s = input("Enter String : ")
+list = s.split(',')
+tuple = tuple(list)
+print(f"List : {list}\nTuple : {tuple}")
+
+tuple =  (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+first_half = int((len(tuple)/2))
+second_half = int(len(tuple))
+print(f"First Half : {tuple[0:first_half]}")
+print(f"Last Half : {tuple[first_half:second_half]}")
