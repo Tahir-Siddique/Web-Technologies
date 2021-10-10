@@ -5,7 +5,6 @@ if s == ''.join(reversed(s)):
 else:
     print(f"{s} is not Palindrome")
 
-
 print(f"Number of Characters in {s} : {len(s)}")
 vowels = ['a','e','i','o','u']
 n_vowels = 0
