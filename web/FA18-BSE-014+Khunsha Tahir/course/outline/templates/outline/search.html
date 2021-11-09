@@ -1,0 +1,20 @@
+{% extends "outline/layout.html" %}
+
+{% block title %}
+Search | outline
+{% endblock %}
+
+{% block body %}
+
+{% if found_topics %}
+<h2>Results for "{{ query }}"</h2>
+<ul>
+    {% for topics in found_topics %}
+    <li><a href="{% url 'outline' topics %}">{{ topics }}</a></li>
+    {% endfor %}
+</ul>
+{% else %}
+<h2>No topics found for "{{ query }}"</h2>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "outline/layout.html" %}
+
+{% block title %}
+Outline
+{% endblock %}
+
+{% block body %}
+<h2>
+    You Searched For : {{ q }}
+    <h2>
+        <ul>
+            {% for topic in topics %}
+            <li><a href="/{{ topic }}"> {{ topic }}</li>
+            {% endfor %}
+        </ul>
+        {% endblock %}

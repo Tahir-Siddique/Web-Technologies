@@ -1,0 +1,15 @@
+{% extends "tasks/layout.html" %}
+
+{% block title %}
+List Topics
+{% endblock title %}
+{% block body %}
+
+<ul>
+    {% for task in tasks %}
+    <li>{{ task }} <a href="/delete?task={{ task }}">Delete</a></li>
+    {% endfor %}
+</ul>
+
+<a href="/add">Add Task</a>
+{% endblock body %}

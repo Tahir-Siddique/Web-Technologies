@@ -1,0 +1,21 @@
+{% extends "outline/layout.html" %}
+
+{% block title %}
+Outline
+{% endblock %}
+
+{% block body %}
+<h2>
+    <h2>
+        <ul>
+            <form action="/editpage" method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="Enter Topic Title" value="{{ title }}" name="title" required>
+                <textarea name="content" placeholder="Enter Content"
+                    style="width: 800px;height: 200px;margin-top: 10px;" required>
+                {{ content }}
+                </textarea>
+                <input type="submit" value="Save">
+            </form>
+        </ul>
+        {% endblock %}

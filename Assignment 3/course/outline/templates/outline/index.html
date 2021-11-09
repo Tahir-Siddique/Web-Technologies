@@ -1,0 +1,35 @@
+{% extends "outline/layout.html" %}
+
+{% load markdownify %}
+{% block title %}
+Outline
+{% endblock %}
+
+{% block body %}
+
+{% if isIndexPage == False %}
+{% if isTopicExist %}
+<h1>Topic Found : {{ title }}</h1>
+
+<ul>
+    <p>
+        {{ topic |markdownify }}
+    </p>
+    <a href="/editpage?title={{title}}">Edit</a>
+</ul>
+{% else %}
+<h5 style="color: red;">No Page Found</h5>
+{% endif %}
+{% endif %}
+
+
+{% if isIndexPage %}
+<h1>All Pages</h1>
+<ul>
+    {% for topic in topics %}
+    <li><a href="/{{ topic }}"> {{ topic }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}

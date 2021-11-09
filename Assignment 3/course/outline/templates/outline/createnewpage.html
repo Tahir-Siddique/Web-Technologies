@@ -1,0 +1,24 @@
+{% extends "outline/layout.html" %}
+
+{% block title %}
+Outline
+{% endblock %}
+
+{% block body %}
+<h2>
+    <h2>
+        <ul>
+            <form action="/createpage" method="post">
+                {% csrf_token %}
+                <input type="text" placeholder="Enter Topic Title" name="title" required>
+                <textarea name="content" placeholder="Enter Content"
+                    style="width: 800px;height: 200px;margin-top: 10px;" required></textarea>
+                <input type="submit" value="Save">
+                <h3 style="color: red;">
+                    {% if isExist %}
+                    Topic Already Exist.
+                    {% endif %}
+                </h3>
+            </form>
+        </ul>
+        {% endblock %}
