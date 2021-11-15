@@ -1,0 +1,15 @@
+{% extends "flight/layout.html" %}
+
+{% block title %}
+All Flights
+{% endblock title %}
+
+{% block body %}
+
+<h1>Name: {{ name }}</h1>
+<h2>Father Name: {{ fname }}</h2>
+{% for flight in flights %}
+<p>{{ flight }}</p>
+{% endfor %}
+
+{% endblock body %}

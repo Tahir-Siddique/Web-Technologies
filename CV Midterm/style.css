@@ -1,0 +1,29 @@
+
+.main {
+    margin: 25px;
+    background-color: green;    
+    color: white;
+    padding: 40px;
+}
+
+input {
+    border: none;
+    width: 300px;
+    height: 35px;
+    margin: 10px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-left: 10px;
+    height: 20px;
+    width: 50px;
+}
+
+select {
+    width: 60%;
+    height: 40px;
+    margin-left: 30px;
+    border: none;
+}
+

@@ -1,0 +1,32 @@
+<tr>
+    <th><label for="id_name">Name:</label></th>
+    <td><input type="text" name="name" value="Testing" maxlength="50" required id="id_name"></td>
+</tr>
+<tr>
+    <th><label for="id_ImageOrVideo">ImageOrVideo:</label></th>
+    <td>
+        <ul class="errorlist">
+            <li>This field is required.</li>
+        </ul><input type="file" name="ImageOrVideo" required id="id_ImageOrVideo">
+    </td>
+</tr>
+<tr>
+    <th><label for="id_CssClass">CssClass:</label></th>
+    <td>
+        <ul class="errorlist">
+            <li>This field is required.</li>
+        </ul>
+        <select name="CssClass" id="id_CssClass">
+            <option value="col-md-4">col-md-4</option>
+
+            <option value="col-md-6">col-md-6</option>
+
+            <option value="col-md-8">col-md-8</option>
+
+            <option value="col-md-10">col-md-10</option>
+
+            <option value="col-md-12">col-md-12</option>
+
+        </select>
+    </td>
+</tr>

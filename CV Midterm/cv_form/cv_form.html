@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Builder</title>
+    <style>
+        * {
+            margin: 10px;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .main {
+            margin: 30px;
+            background-color: rgba(0, 0, 0, 0.726);
+            height: auto;
+            padding: 10px;
+            color: white;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px 10px rgba(255, 255, 0, 0.5);
+
+            align-items: center;
+            align-content: center;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            border: none;
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+            border-radius: 10px;
+            height: 30px;
+            margin-top: 20px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-left: 50px;
+        }
+
+        select {
+            width: 60%;
+            height: 40px;
+            margin-left: 30px;
+            border: none;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        input:last-child {
+            width: 60%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>CV Registration Form</h1>
+        <form action="#" method="POST">
+
+            <label>Name:</label>
+            <input type="text" placeholder="Enter Name">
+
+            <label for="">Area of interest:</label>
+            <input type="text" placeholder="Area of interest e.g Web Designer">
+            <br>
+
+
+            <label for="">Email:</label>
+            <input type="email" placeholder="Enter Email">
+            <hr>
+            <label for="">Select your highest education :</label>
+            <input type="radio" value="Matric" name="higherEDU">Matric
+            <input type="radio" value="Intermediate" name="higherEDU">Intermediate
+            <input type="radio" value="Bachelor" name="higherEDU">Bachelor
+            <input type="radio" value="Other" name="higherEDU">Other
+            <br>
+            <label for="">Percentage CGPA:</label>
+            <input type="text" placeholder="Obtained e.g 3.2"> out of <input type="text" placeholder="4.00">
+            <br>
+            <label for="">Select program:</label>
+            <select name="program" id="program">
+                <option value="bsse">BS-SE</option>
+                <option value="bscs">BS-CS</option>
+                <option value="mcs">MCS</option>
+                <option value="other">Other</option>
+            </select>
+            <hr>
+            <label for="">Skills:</label>
+            <input type="checkbox" name="skills" id="skills">C++
+            <input type="checkbox" name="skills" id="skills" value="Python">Python
+            <input type="checkbox" name="skills" id="skills" value="Java">Java
+            <input type="checkbox" name="skills" id="skills" value="HTML/CSS">HTML/CSS
+            <input type="checkbox" name="skills" id="skills" value="Javascript">Javascript
+            <input type="checkbox" name="skills" id="skills" value="Others">Others
+            <br>
+            <label for="">Hobies:</label>
+            <input type="text" placeholder="e.g. swiming, socializing, cricket, makeup, artist, etc">
+        </form>
+    </div>
+</body>
+
+</html>

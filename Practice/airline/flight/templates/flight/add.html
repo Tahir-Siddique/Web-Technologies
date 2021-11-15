@@ -1,0 +1,17 @@
+{% extends "flight/layout.html" %}
+
+{% block title %}
+Add Flights
+{% endblock title %}
+
+{% block body %}
+
+<h1>Add</h1>
+
+<form action="/flight/add" method="POST">
+    {% csrf_token %}
+    <input type="text" name="flight_name" placeholder="Flight">
+    <button type="submit">Add</button>
+</form>
+
+{% endblock body %}
