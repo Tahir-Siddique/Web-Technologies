@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Infinite Scroll</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #posts{
+            width: 100%;
+        }
+        button{
+            float: right;
+        }
+        .post{
+            width: 80%;
+            height: 60px;
+            padding: 30px 30px 30px 30px;
+            background-color: black;
+            border-radius: 10px;
+            color: white;
+            margin: 0 auto;
+            margin-top: 10px;
+            transition-duration: 1s;
+            animation-name: hide;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+
+        }
+        @keyframes hide {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                height: 0px;
+                line-height: 0px;
+                padding: 0px;
+                background-color: red;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div id="posts">
+    </div>
+    <script>
+        let posts = document.querySelector("#posts") 
+        let start = 0
+        let end = 10
+        getPosts(0,10)
+        window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            start = start + 10
+            end = end + 10
+            getPosts(start,end)
+            }
+        };
+        document.addEventListener('click', event => {
+        const element = event.target;
+        if (element.className === 'hide') {
+            element.parentElement.style.animationPlayState = 'running';
+            element.parentElement.addEventListener('animationend', () => {
+                element.parentElement.remove();
+            })
+        }
+        });
+        function getPosts(start, end){
+            fetch(`http://127.0.0.1:8000/infinitscroll/api/?start=${start}&end=${end}`).then((response)=>response.json()).then(arr=>{
+                arr.forEach(element => {
+                    let post = document.createElement("div")
+                    post.classList += "post"
+                    post.innerHTML = `<p>${element}</p><button class='hide'>Hide</button>`
+                    posts.append(post)
+                });
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <script>
+        var items = []
+        document.addEventListener("DOMContentLoaded",()=>{
+                 document.querySelector('#submit').disabled = true
+            document.querySelector('form').onsubmit = (e)=>{
+                todo = document.querySelector('#todo').value
+                if(items.indexOf(todo)<0){
+                    items.push(todo)
+                    option = document.createElement('option')
+                    option.innerText = todo
+                    option.value = todo
+                    document.querySelector('#items').append(option)
+                    document.querySelector('#todo').value = ""
+                    document.querySelector('#submit').disabled = true
+
+                }else{
+                    alert(`${todo} already exist.`)
+                }
+                return false;
+
+            }
+            document.querySelector('#todo').onkeyup = ()=>{
+                if(document.querySelector('#todo').value.length>0){
+                document.querySelector('#submit').disabled = false
+                }else{
+                 document.querySelector('#submit').disabled = true
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" id="todo" placeholder="Enter Todo Name" oncha>
+        <input type="submit" value="Add" id="submit">
+    </form>
+    <select id="items"></select>
+</body>
+</html>
